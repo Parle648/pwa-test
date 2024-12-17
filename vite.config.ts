@@ -8,13 +8,21 @@ export default defineConfig({
     react(), 
     VitePWA({ 
       srcDir: 'src',
+      registerType: 'prompt',
+      workbox: {
+        clientsClaim: true,
+        skipWaiting: true,
+      },
       filename: 'service-worker.ts',
-      registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt'],
       manifest: {
         name: 'Vite PWA Project',
         short_name: 'Vite PWA Project',
         theme_color: '#ffffff',
+        start_url: '/',
+        scope: '/',
+        display: 'standalone',
+        background_color: '#fff',
         icons: [
             {
                 src: 'pwa-64x64.png',
