@@ -7,8 +7,10 @@ export default defineConfig({
   plugins: [
     react(), 
     VitePWA({ 
+      srcDir: 'src',
+      filename: 'service-worker.ts',
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+      includeAssets: ['favicon.svg', 'robots.txt'],
       manifest: {
         name: 'Vite PWA Project',
         short_name: 'Vite PWA Project',
